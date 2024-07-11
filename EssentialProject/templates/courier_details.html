@@ -1,0 +1,39 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<form method="POST">
+    <input type="text" name="courier_partner_name" placeholder="Courier Partner Name">
+    <input type="text" name="service_type" placeholder="Service Type(Standard/Express)">
+    <input type="text" name="average_delivery_time" placeholder="Average Delivery Time">
+    <input type="text" name="weight_limits_per_courier" placeholder="Weight Limits Per Courier">
+    <input type="text" name="avg_courier_price" placeholder="Avg Courier Price">
+    <!-- Include other input fields as per your requirements -->
+    <input type="submit" value="Submit">
+</form>
+<table>
+    <tr>
+        <th>Courier Partner Name</th>
+        <th>Service Type(Standard/Express)</th>
+        <th>Average Delivery Time</th>
+        <th>Weight Limits Per Courier</th>
+        <th>Avg Courier Price</th>
+        <!-- Add more table headers for other fields -->
+    </tr>
+
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.courier_partner_name }}</td>
+        <td>{{ entry.service_type }}</td>
+        <td>{{ entry.average_delivery_time }}</td>
+        <td>{{ entry.weight_limits_per_courier }}</td>
+        <td>{{ entry.avg_courier_price }}</td>
+    </tr>
+    {% endfor %}
+    <!-- Display last submitted data here -->
+</table>
+<div style="height: 30px;"></div>
+<body>
+    <a href="/back-to-home"><button>Back TO Home</button></a>
+</body>

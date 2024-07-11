@@ -1,0 +1,55 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<form method="POST">
+    <input type="text" name="influencer_name" placeholder="Influencer Name">
+    <input type="text" name="influencer_gender" placeholder="Influencer Gender">
+    <input type="text" name="average_views_per_reel" placeholder="Average Views Per Reel">
+    <input type="text" name="email_address" placeholder="Email Address">
+    <input type="text" name="social_media_account_url" placeholder="Social Media Account URL">
+    <input type="text" name="location" placeholder="Location">
+    <input type="text" name="follower_count" placeholder="Follower Count">
+    <input type="text" name="average_likes_per_post" placeholder="Average Likes Per Post">
+    <input type="text" name="content_categories" placeholder="Content Categories">
+    <input type="text" name="phone_number" placeholder="Phone Number">
+    <!-- Include other input fields as per your requirements -->
+    <input type="submit" value="Submit">
+</form>
+<table>
+    <tr>
+        <th>Influencer Name</th>
+        <th>Influencer Gender</th>
+        <th>Average Views Per Reel</th>
+        <th>Email Address</th>
+        <th>Social Media Account URL</th>
+        <th>Location</th>
+        <th>Follower Count</th>
+        <th>Average Likes Per Post</th>
+        <th>Content Categories</th>
+        <th>Phone Number</th>
+        <!-- Add more table headers for other fields -->
+    </tr>
+
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.influencer_name }}</td>
+        <td>{{ entry.influencer_gender }}</td>
+        <td>{{ entry.average_views_per_reel }}</td>
+        <td>{{ entry.email_address }}</td>
+        <td>{{ entry.social_media_account_url }}</td>
+        <td>{{ entry.location }}</td>
+        <td>{{ entry.follower_count }}</td>
+        <td>{{ entry.average_likes_per_post }}</td>
+        <td>{{ entry.content_categories }}</td>
+        <td>{{ entry.phone_number }}</td>
+        <!-- Add more table data cells for other fields -->
+    </tr>
+    {% endfor %}
+    <!-- Display last submitted data here -->
+</table>
+<div style="height: 30px;"></div>
+<body>
+    <a href="/back-to-home"><button>Back TO Home</button></a>
+</body>

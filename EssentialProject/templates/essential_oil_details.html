@@ -1,0 +1,38 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<form method="POST">
+    <input type="text" name="brand_name" placeholder="Brand Name">
+    <input type="text" name="product_name" placeholder="Product Name">
+    <input type="text" name="size/volume" placeholder="Size/Volume">
+    <input type="text" name="product_price" placeholder="Product Price">
+    <!-- Include other input fields as per your requirements -->
+    <input type="submit" value="Submit">
+</form>
+<table>
+    <tr>
+        <th>Brand Name</th>
+        <th>Product Name</th>
+        <th>Size/Volume</th>
+        <th>Product Price</th>
+        <!-- Add more table headers for other fields -->
+    </tr>
+
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.brand_name }}</td>
+        <td>{{ entry.product_name }}</td>
+        <td>{{ entry.size_or_volume }}</td>
+        <td>{{ entry.product_price }}</td>
+        <!-- Add more table data cells for other fields -->
+    </tr>
+    {% endfor %}
+    <!-- Display last submitted data here -->
+
+</table>
+<div style="height: 30px;"></div>
+<body>
+    <a href="/back-to-home"><button>Back TO Home</button></a>
+</body>
